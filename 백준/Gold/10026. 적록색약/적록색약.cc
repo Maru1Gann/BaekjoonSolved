@@ -50,13 +50,14 @@ int main()
 			pic[i][j] = tmp[j];
 	}
 
+
 	queue<pair <int, int> > Q;
 	count1 = count2 = 0;
 
+	//구역 세기 1
+
 	for (int i = 0; i < n; i++)
-	{
 		for (int j = 0; j < n; j++)
-		{
 			if (visited[i][j] == false)
 			{
 				Q.push({ i,j });
@@ -69,8 +70,8 @@ int main()
 					visit4ways(Q, pic, visited, coord);
 				}
 			}
-		}
-	}
+
+	//적록색약 적용
 
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < n; j++)
@@ -80,10 +81,11 @@ int main()
 			visited[i][j] = false;
 		}
 
+
+	//구역 세기 2
+
 	for (int i = 0; i < n; i++)
-	{
 		for (int j = 0; j < n; j++)
-		{
 			if (visited[i][j] == false)
 			{
 				Q.push({ i,j });
@@ -96,8 +98,6 @@ int main()
 					visit4ways(Q, pic, visited, coord);
 				}
 			}
-		}
-	}
 
 	cout << count1 << ' ' << count2;
 }
