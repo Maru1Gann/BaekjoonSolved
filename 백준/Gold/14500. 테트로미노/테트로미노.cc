@@ -120,6 +120,10 @@ int getCost(int** paper, int startY, int startX)
 
 int main()
 {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+
 	cin >> n >> m;
 	int** paper = new int* [n];
 	for (int i = 0; i < n; i++)
